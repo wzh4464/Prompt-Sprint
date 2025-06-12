@@ -1,0 +1,15 @@
+[project]
+name = "prompt-sprint"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "black>=25.1.0",
+    "flake8>=7.2.0",
+    "numpy>=2.3.0",
+    "pandas>=2.3.0",
+    "pre-commit>=4.2.0",
+    "scikit-learn>=1.7.0",
+    "setuptools>=80.9.0",
+]

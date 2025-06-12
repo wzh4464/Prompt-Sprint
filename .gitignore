@@ -192,3 +192,12 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# VSCode
+.vscode/
+
+# macOS
+.DS_Store
+
+# Results and logs
+experiments/**/results/

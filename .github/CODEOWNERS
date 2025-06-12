@@ -1,0 +1,9 @@
+# 指定不同目录的负责人（GitHub 用户名或团队）
+# docs/
+/docs/
+
+# 实验脚本和环境
+/experiments/
+
+# CI 配置
+/.github/workflows/
