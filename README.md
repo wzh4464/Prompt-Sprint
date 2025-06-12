@@ -37,6 +37,7 @@ python experiments/evo-setup/run_demo.py
 ```
 
 ## 开发规范
+
 1. 全部改动需通过 Pull Request，并经过自动化 CI 检查；
 2. 使用 `flake8`+`black` 保持代码风格一致；
 3. 文档放置于 `docs/`，实验放置于 `experiments/`，可复用代码抽象到 `src/`。

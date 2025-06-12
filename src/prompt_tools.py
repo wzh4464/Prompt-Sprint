@@ -14,14 +14,14 @@ PROMPT_DIR = Path(__file__).resolve().parent.parent / "prompts"
 
 
 def list_prompts() -> List[str]:
-    """列出可用的 prompt 名称。"""
+    """列出可用的 prompt 名称."""
     if not PROMPT_DIR.exists():
         return []
     return [p.stem for p in PROMPT_DIR.glob("*.txt")]
 
 
 def load_prompt(name: str) -> str:
-    """根据名称加载 prompt 文本。
+    """根据名称加载 prompt 文本.
 
     参数
     ----
@@ -30,4 +30,4 @@ def load_prompt(name: str) -> str:
     path = PROMPT_DIR / f"{name}.txt"
     if not path.exists():
         raise FileNotFoundError(f"Prompt '{name}' 未找到: {path}")
-    return path.read_text(encoding="utf-8") 
+    return path.read_text(encoding="utf-8")

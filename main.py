@@ -1,4 +1,5 @@
-def main():
+def main() -> None:
+    """包入口函数."""
     print("Hello from prompt-sprint!")
 
 
