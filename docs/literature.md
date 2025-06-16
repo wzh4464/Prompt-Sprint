@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD024 -->
 # Prompt Engineering 方法文献综述
 
 本文档旨在提炼和总结几种前沿的提示工程（Prompt Engineering）优化方法的核心思路、输入输出以及优缺点。
