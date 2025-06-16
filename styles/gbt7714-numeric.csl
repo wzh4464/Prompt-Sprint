@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="never" page-range-format="minimal">
+  <info>
+    <title>China National Standard GB/T 7714-2015 (numeric)</title>
+    <title-short>GBT7714-2015</title-short>
+    <id>http://www.zotero.org/styles/gbt7714-2015-numeric</id>
+    <link href="http://www.zotero.org/styles/gbt7714-2015-numeric" rel="self"/>
+    <link href="http://www.zotero.org/styles/gbt7714-2015-author-date" rel="template"/>
+    <link href="https://github.com/redleafnew/Chinese-STD-GB-T-7714-related-csl/wiki/Style-instructions-(in-Chinese)" rel="documentation"/>
+    <author>
+      <name>Redleaf</name>
+      <email>redleaf@some.place</email>
+    </author>
+    <contributor>
+      <name>Bowen Guan</name>
+      <email>bwguan@buaa.edu.cn</email>
+    </contributor>
+    <category citation-format="numeric"/>
+    <category field="generic-base"/>
+    <summary>The numeric style for the Chinese Standard GB/T 7714-2015</summary>
+    <updated>2021-01-22T08:08:08+08:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <locale xml:lang="en">
+    <terms>
+      <term name="and">et al</term>
+      <term name="page-range-delimiter">-</term>
+      <term name="in">In</term>
+      <term name="cited">cit</term>
+      <term name="edition">ed.</term>
+    </terms>
+  </locale>
+  <locale xml:lang="zh-CN">
+    <terms>
+      <term name="and">等</term>
+      <term name="page-range-delimiter">-</term>
+      <term name="in">见</term>
+      <term name="cited">引文</term>
+      <term name="edition">版</term>
+    </terms>
+  </locale>
+  <macro name="author">
+    <choose>
+      <if variable="author">
+        <names variable="author">
+          <name et-al-min="4" et-al-use-first="3" name-as-sort-order="all" sort-separator=" "/>
+        </names>
+      </if>
+      <else-if variable="editor">
+        <names variable="editor">
+          <name et-al-min="4" et-al-use-first="3" name-as-sort-order="all" sort-separator=" "/>
+          <label form="short" prefix=", "/>
+        </names>
+      </else-if>
+    </choose>
+  </macro>
+  <macro name="access">
+    <choose>
+      <if variable="DOI">
+        <text variable="DOI" prefix="DOI:"/>
+      </if>
+      <else-if variable="URL">
+        <group>
+          <text variable="URL"/>
+        </group>
+      </else-if>
+    </choose>
+  </macro>
+  <macro name="accessed-date">
+    <date variable="accessed" form="text" prefix="[" suffix="]">
+      <date-part name="year"/>
+      <date-part name="month" form="numeric-leading-zeros" prefix="-"/>
+      <date-part name="day" form="numeric-leading-zeros" prefix="-"/>
+    </date>
+  </macro>
+  <macro name="citation-locator">
+    <group>
+      <label variable="locator" form="short"/>
+      <text variable="locator"/>
+    </group>
+  </macro>
+  <macro name="container-title">
+    <choose>
+      <if type="article-journal article-magazine" match="any">
+        <text variable="container-title"/>
+      </if>
+      <else>
+        <text variable="container-title" prefix=". "/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="container-author">
+    <choose>
+      <if type="chapter paper-conference" match="any">
+        <text term="in" suffix=": " text-case="capitalize-first"/>
+        <names variable="container-author">
+          <name name-as-sort-order="all" sort-separator=" " et-al-min="4" et-al-use-first="3"/>
+        </names>
+      </if>
+    </choose>
+  </macro>
+  <macro name="edition">
+    <choose>
+      <if is-numeric="edition">
+        <number variable="edition" form="ordinal"/>
+        <text term="edition" prefix=" "/>
+      </if>
+      <else>
+        <text variable="edition"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="type-code">
+    <text variable="type-code" prefix="[" suffix="]"/>
+  </macro>
+  <macro name="issue-date">
+    <choose>
+      <if type="article-journal article-magazine" match="any">
+        <date variable="issued" prefix="(" suffix=")">
+          <date-part name="year"/>
+          <date-part name="month" form="numeric-leading-zeros" prefix=","/>
+        </date>
+      </if>
+      <else-if type="bill book graphic legal_case legislation motion_picture report song" match="any">
+        <date variable="issued">
+          <date-part name="year"/>
+        </date>
+      </else-if>
+      <else-if type="paper-conference">
+        <date variable="issued">
+          <date-part name="year" prefix="//"/>
+          <date-part name="month" form="numeric-leading-zeros" prefix="-"/>
+          <date-part name="day" form="numeric-leading-zeros" prefix="-"/>
+        </date>
+      </else-if>
+      <else-if type="webpage post-weblog" match="any">
+        <date form="text" variable="issued" prefix="(" suffix=")">
+          <date-part name="year"/>
+          <date-part name="month" form="numeric-leading-zeros" prefix="-"/>
+          <date-part name="day" form="numeric-leading-zeros" prefix="-"/>
+        </date>
+      </else-if>
+      <else>
+        <date variable="issued">
+          <date-part name="year"/>
+        </date>
+      </else>
+    </choose>
+  </macro>
+  <macro name="title">
+    <text variable="title"/>
+    <text macro="type-code"/>
+  </macro>
+  <macro name="publisher-place">
+    <choose>
+      <if type="book chapter paper-conference" match="any">
+        <text variable="publisher-place"/>
+      </if>
+      <else>
+        <text variable="publisher-place"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="publisher">
+    <choose>
+      <if type="book chapter paper-conference" match="any">
+        <text variable="publisher" prefix=": "/>
+      </if>
+      <else>
+        <text variable="publisher"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="page">
+    <choose>
+      <if type="article-journal article-magazine" match="any">
+        <text variable="page" prefix=": "/>
+      </if>
+      <else>
+        <text variable="page"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="volume">
+    <choose>
+      <if type="article-journal article-magazine" match="any">
+        <text variable="volume" prefix=", "/>
+      </if>
+      <else>
+        <text variable="volume"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="issue">
+    <choose>
+      <if type="article-journal article-magazine" match="any">
+        <text variable="issue" prefix="(" suffix=")"/>
+      </if>
+      <else>
+        <text variable="issue"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="publication-in-database">
+    <choose>
+      <if type="bill book graphic legal_case legislation motion_picture report song" match="any">
+        <group delimiter=". " prefix=". ">
+          <text macro="container-author"/>
+          <text macro="container-title"/>
+        </group>
+      </if>
+    </choose>
+  </macro>
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout vertical-align="sup" prefix="[" suffix="]">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+  <bibliography hanging-indent="true" et-al-min="8" et-al-use-first="7" entry-spacing="0">
+    <layout>
+      <text variable="citation-number" prefix="[" suffix="]"/>
+      <text macro="author" suffix=". "/>
+      <text macro="title"/>
+      <text macro="publication-in-database"/>
+      <group delimiter="" prefix=". ">
+        <text macro="edition"/>
+        <text macro="publisher-place" prefix=". "/>
+        <text macro="publisher"/>
+        <text macro="issue-date"/>
+        <text macro="page"/>
+      </group>
+      <group delimiter="" prefix=". ">
+        <text macro="access"/>
+        <text macro="accessed-date"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>
